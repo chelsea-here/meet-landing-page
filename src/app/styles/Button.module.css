@@ -22,7 +22,7 @@
 }
 
 .primary:hover {
-  color: var(--cyan-hover);
+  color: var(--color-cyan-hover);
 }
 
 .secondary {
