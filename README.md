@@ -25,6 +25,7 @@ Users should be able to:
 ### Screenshot
 
 ![](./public/screenshot%20desktop.png)
+![](./public/screenshot%20tablet.png)
 ![](./public/screenshot%20mobile.png)
 
 ### Links
@@ -42,11 +43,9 @@ Users should be able to:
 - [Typescript](https://www.typescriptlang.org/) - JS Language
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
-- [Sass](https://sass-lang.com/) - CSS preprocessor
 
 ### Resources
 
-- [Blog on how to use Sass and TailwindCSS together](https://www.rootstrap.com/blog/how-to-use-module-scss-with-tailwind-in-next-js#:~:text=js%2C%20Tailwind%20CSS%2C%20and%20SCSS,variables%2C%20and%20functions%20for%20CSS.)
 - [Blog on CSS subclasses best practice](https://blog.logrocket.com/how-to-use-css-variables-like-a-pro/)
 
 ## Author
