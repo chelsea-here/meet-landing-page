@@ -21,7 +21,8 @@
   color: var(--color-cyan-300);
 }
 
-.primary:hover {
+.primary:hover,
+.primary:focus {
   background-color: var(--color-cyan-hover);
 }
 
@@ -33,6 +34,7 @@
   color: var(--color-purple-300);
 }
 
-.secondary:hover {
+.secondary:hover,
+.secondary:focus {
   background-color: var(--color-purple-hover);
 }
