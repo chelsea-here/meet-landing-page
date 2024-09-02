@@ -1,0 +1,38 @@
+.button {
+  font: var(--font-preset-5);
+  font-weight: 900;
+  letter-spacing: 0;
+  padding: 1em 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 999em;
+  gap: 0.25em;
+  color: var(--primary-color-light);
+  white-space: nowrap;
+}
+
+.primary {
+  background-color: var(--color-cyan-600);
+}
+
+.primary span {
+  color: var(--color-cyan-300);
+}
+
+.primary:hover {
+  color: var(--cyan-hover);
+}
+
+.secondary {
+  background-color: var(--color-purple-600);
+}
+
+.secondary span {
+  color: var(--color-purple-300);
+}
+
+.secondary:hover {
+  color: var(--color-purple-hover);
+}

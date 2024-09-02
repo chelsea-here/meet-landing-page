@@ -1,95 +1,181 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import styles from "./styles/page.module.css";
+import Button from "./components/Button";
+import Logo from "./components/Logo";
+import { Bubble } from "./components/Bubble";
+import ImageContainer from "./components/ImageContainer";
+import HeroImageLeft from "../../public/desktop/image-hero-left.png";
+import HeroImageRight from "../../public/desktop/image-hero-right.png";
+import HeroImageTablet from "../../public/tablet/image-hero.png";
+
+type ImageProps = {
+  id: number;
+  image: string;
+  imageAlt: string;
+  backgroundColor?: string;
+  width: number;
+  height: number;
+};
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <>
+      <main className={styles.main}>
+        <div className={styles.nav}>
+          <Logo />
+        </div>
+        <section className={styles.hero}>
+          <div className={styles.heroTabletContainer}>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
+              className={styles.heroTablet}
+              src={HeroImageTablet}
+              alt="photos of users as hero image"
               priority
             />
-          </a>
-        </div>
-      </div>
+          </div>
+          <Image
+            className={styles.desktopLeft}
+            src={HeroImageLeft}
+            alt="photos of users as hero image"
+            priority
+          />
+          <Image
+            className={styles.desktopRight}
+            src={HeroImageRight}
+            alt="photos of users as hero image"
+            priority
+          />
+          <div className={styles.heroTextContainer}>
+            <h1 className={styles.heroTitle}>
+              Group Chat
+              <br />
+              for Everyone
+            </h1>
+            <p className={styles.heroText}>
+              Meet makes it easy to connect with others face-to-face virtually
+              and collaborate across any device.
+            </p>
+            <div className={styles.buttonStack}>
+              <Button
+                content="Download"
+                contentSpan="v1.3"
+                // onClick={() => alert("button clicked!")}
+                variant="primary"
+              />
+              <Button
+                content="What is it?"
+                // onClick={() => alert("button clicked!")}
+                variant="secondary"
+              />
+            </div>
+          </div>
+        </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <section className={styles.mid}>
+          <Bubble content="01" />
+          <div className={styles.collage}>
+            <ImageContainer
+              key={10}
+              id={10}
+              image="/desktop/image-woman-in-videocall.jpg"
+              imageAlt="image of woman on video call"
+              width={510}
+              height={484}
+            />
+            <ImageContainer
+              key={20}
+              id={20}
+              image="/desktop/image-women-videochatting.jpg"
+              imageAlt="image of women on a video chat"
+              width={510}
+              height={484}
+            />
+            <ImageContainer
+              key={30}
+              id={30}
+              image="/desktop/image-man-texting.jpg"
+              imageAlt="image of a man texting"
+              width={510}
+              height={484}
+            />
+            <ImageContainer
+              key={40}
+              id={40}
+              image="/desktop/image-men-in-meeting.jpg"
+              imageAlt="image of men in a meeting"
+              width={510}
+              height={484}
+            />
+          </div>
+          <div className={styles.midTextContainer}>
+            <p className={styles.midSpecial}>Built for modern use</p>
+            <p className={styles.midTitle}>
+              Smarter meetings, all in one place
+            </p>
+            <p className={styles.midText}>
+              Send messages, share files, show your screen, and record your
+              meetings — all in one workspace. Control who can join with
+              invite-only team access, data encryption, and data export.
+            </p>
+          </div>
+        </section>
+        <Bubble content="02" />
+        <section className={styles.end}>
+          <div className={styles.bgWrap}>
+            <Image
+              className={styles.backgroundImage}
+              src="/tablet/image-footer.jpg"
+              alt="abstract teal background image"
+              quality={100}
+              // width={768}
+              // height={428}
+              fill
+              style={{ objectFit: "cover" }}
+            />
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            <div className={styles.endContent}>
+              <div className={styles.endTextContainer}>
+                <p className={`${styles.endTitle} ${styles.left}`}>
+                  Experience more together
+                </p>
+                <p className={`${styles.endText} ${styles.center}`}>
+                  Stay connected with reliable HD meetings and unlimited
+                  one-on-one and group video sessions.
+                </p>
+                <div className={`${styles.buttonStack} ${styles.right}`}>
+                  <Button
+                    content="Download"
+                    contentSpan="v1.3"
+                    // onClick={() => alert("button clicked!")}
+                    variant="secondary"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.attributionWrapper}>
+            <div className={styles.attribution}>
+              Challenge by{" "}
+              <Link
+                className="text-blue"
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+              >
+                Frontend Mentor
+              </Link>
+              . Coded by{" "}
+              <Link
+                className="text-blue"
+                href="https://github.com/chelsea-here"
+              >
+                Chelsea Anne Livingston Cruz
+              </Link>
+              .
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
